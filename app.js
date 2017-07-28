@@ -8,18 +8,13 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session      = require('express-session');
 const passport     = require('passport');
-const flash        = require('connect-flash');
-const LocalStrategy      = require('passport-local').Strategy;
-const User               = require('./models/user-model');
-const bcrypt             = require('bcrypt');
-const MongoStore         = require('connect-mongo')(session);
-const multer             = require('multer');
+const cors         = require('cors');
 
 require('dotenv').config();
 
-require('./config/passport-config.js');
-mongoose.connect('mongodb://localhost/paperplanes');
-// mongoose.connect(process.env.MONGODB_URI);
+require('./config/passport-config');
+
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
@@ -28,7 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // default value for title local
-app.locals.title = 'PaperPlanes';
+app.locals.title = 'Express - Generated with IronGenerator';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -38,46 +33,39 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
-app.use( session({
-  secret: 'my second app',
-
-  // these two options are there to prevent warnings in terminal
+app.use(session({
+  secret: 'something something something trello',
   resave: true,
   saveUninitialized: true
-}) );
-app.use(flash());
-
-// These need to come AFTER the session middleware
+}));
 app.use(passport.initialize());
 app.use(passport.session());
-// ... and BEFORE our routes
 
-// This middleware sets the user variable for all views
-// (only if logged in)
-//   user: req.user     for all renders!
-app.use((req, res, next) => {
-  if (req.user) {
-    // Creates a variable "user" for views
-    res.locals.user = req.user;
-  }
-
-  next();
-});
+app.use(cors({
+  credentials: true,
+  origin: [ 'http://localhost:4200' ]
+}));
 
 
 
-// OUR ROUTES HERE
-// ----------------------------------------------------------
-const index = require('./routes/index');
-app.use('/', index);
+// COMMENT
 
-const myAuthRoutes = require('./routes/auth-routes.js');
+// ROUTES GO HERE --------------------------------------------------------------
+const myAuthRoutes = require('./routes/auth-routes');
 app.use('/', myAuthRoutes);
 
+const myListApi = require('./routes/list-api-routes');
+app.use('/', myListApi);
+
+const myCardApi = require('./routes/card-api-routes');
+app.use('/', myCardApi);
+// -----------------------------------------------------------------------------
 
 
-
-// ----------------------------------------------------------
+// Display the Angular app if no route matches
+app.use((req, res, next) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
 
 
 

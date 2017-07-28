@@ -1,0 +1,36 @@
+
+
+<div class="body">
+
+
+<div class="container">
+	<section id="content">
+
+    <p class="error" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </p>
+
+		<form (ngSubmit)="submitLogin()">
+			<h1>Login Form</h1>
+			<div>
+        <label for="email-input"> Email </label>
+        <input  id="email-input" type="email" placeholder="blah@example.com"
+            [(ngModel)]="formEmail" name="formEmail" id="username">
+			</div>
+			<div>
+        <label for="password-input"> Password </label>
+        <input  id="password-input" type="password" placeholder="*****"
+            [(ngModel)]="formPassword" name="formPassword" id="password" >
+			</div>
+			<div>
+				<input type="submit" value="Log in" />
+				<a href="#">Lost your password?</a>
+				<a href="#">Register</a>
+			</div>
+		</form><!-- form -->
+		<div class="button">
+			<a href="#">Download source file</a>
+		</div><!-- button -->
+	</section><!-- content -->
+</div><!-- container -->
+</div>
