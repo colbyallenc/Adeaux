@@ -1,0 +1,25 @@
+
+<!-- <div *ngIf="isLoggedIn"> -->
+
+<div class="container">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="btn">
+  <span class="fa fa-bars"></span>
+  <ul>
+      <li class="fa fa-user" [routerLink]="['/dashboard']"></li>
+      <!-- <li class="fa fa-pencil-square-o" (click)="showNewLetter()" ></li> -->
+      <!-- <li class="fa fa-paper-plane" (click)="showLetters()" ></li> -->
+      <!-- <li class="fa fa-search" (click)="showSearch()"></li> -->
+      <!-- <li class="fa fa-cogs"[routerLink]="['']"></li>> -->
+  </ul>
+</div>
+<app-new-letter  *ngIf="isShowingForm" ></app-new-letter>
+<!-- <app-lists-page></app-lists-page> -->
+</div>
+
+<div class="world" id="canvas"></div>
+
+
+
+<router-outlet></router-outlet>
+<!-- </div> -->

@@ -38,6 +38,8 @@ ListModel
 //CREATE
     const theList = new ListModel ({
       title: req.body.listTitle,
+      content: req.body.listContent,
+      tags: req.body.listTags,
       position: newPosition,
       owner: req.user._id //to use this API you must be logged in
     });

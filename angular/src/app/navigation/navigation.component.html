@@ -1,0 +1,30 @@
+<!-- BUTTON NAVIGATION -->
+<router-outlet></router-outlet>
+
+
+<div class="container">
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="btn">
+  <span class="fa fa-bars"></span>
+  <ul>
+    <li class="fa fa-user" [routerLink]="['']"></li>
+      <!-- <li class="fa fa-pencil-square-o" (click)="showMyShit()" ></li> -->
+      <li class="fa fa-pencil-square-o" [routerLink]="['/new']"></li>
+      <li class="fa fa-paper-plane"[routerLink]="['/lists']"></li>
+      <li class="fa fa-search" [routerLink]="['/search']"></li>
+      <!-- <li class="fa fa-cogs"[routerLink]="['']"></li>> -->
+  </ul>
+</div>
+
+</div>
+
+
+
+<!--
+<button *ngIf="!isShowingForm" (click)="showForm()">
+  Add Fly
+</button>
+
+<div *ngIf="isShowingForm">
+  <h3> Add a New Fly </h3> -->

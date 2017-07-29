@@ -10,6 +10,14 @@ const myListSchema = new Schema(
       type: String,
       required: true
     },
+    content: {
+      type: String,
+      required: true
+    },
+    tags: {
+      type: String,
+      required: true
+    },
     position: { type: Number }, //you can reorder them
     owner:{
       type: Schema.Types.ObjectId,
