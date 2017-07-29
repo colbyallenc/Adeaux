@@ -36,7 +36,6 @@ export class NewLetterComponent implements OnInit {
 
 
 
-    console.log('gdfnknknknknknkkkkkkghdhgfghfgfhgfgh')
     this.listThang.lists()
       .then((listsFromApi) => {
           this.myLists = listsFromApi;
@@ -70,6 +69,12 @@ export class NewLetterComponent implements OnInit {
                     }, 200);
                 });
             });
+
+
+
+//quotes
+
+
 
 }
 

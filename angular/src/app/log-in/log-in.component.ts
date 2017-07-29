@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { SessionService } from '../services/session.service';
-// declare var $: any;
+declare var $: any;
 
 @Component({
   selector: 'app-log-in',
@@ -21,6 +21,12 @@ export class LogInComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    $().ready(function(){
+           $(".login").click(function() {
+               $(".login-container").show();
+               $(".login").toggle();
+           });
+       });
 
   }
 
@@ -35,4 +41,5 @@ export class LogInComponent implements OnInit {
             this.errorMessage = apiInfo.message;
         });
   }
+  
 }

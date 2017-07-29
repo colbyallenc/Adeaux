@@ -1,5 +1,39 @@
 
 
+<div class="container">
+	<button class="login"> Login </button>
+<div class="login-container">
+	<section id="content">
+
+		<form (ngSubmit)="submitLogin()">
+			<h1>Login Form</h1>
+			<div>
+				<label for="email-input">  </label>
+        <input  id="email-input" type="text" placeholder="Email"
+            [(ngModel)]="formEmail" name="formEmail" id="username">
+			</div>
+
+			<div>
+				<label for="password-input"> </label>
+        <input  id="password-input" type="password" placeholder="Password "
+            [(ngModel)]="formPassword" name="formPassword" id="password" >
+
+			</div>
+			<div>
+				<input type="submit" value="Log in"/>
+				<a href="#">Register</a>
+			</div>
+			
+		</form><!-- form -->
+	</section><!-- content -->
+</div>
+</div><!-- container -->
+
+
+
+
+<!--
+
 <div class="body">
 
 
@@ -27,10 +61,10 @@
 				<a href="#">Lost your password?</a>
 				<a href="#">Register</a>
 			</div>
-		</form><!-- form -->
+		</form>
 		<div class="button">
 			<a href="#">Download source file</a>
-		</div><!-- button -->
-	</section><!-- content -->
-</div><!-- container -->
+		</div>
+	</section>
 </div>
+</div> -->

@@ -1,3 +1,18 @@
+.newLetter {
+  font-size: 50px;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.w3-row-padding {
+  position: absolute;
+  top: 70%
+}
+
+.w3-border {
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
 #box-container
 {
   position: absolute;
@@ -19,19 +34,19 @@
 #txtTest
 {
   height: 50px;
-  width: 375px;
-
+  width: 450px;
+  box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
 
   border: 5px solid #fafafa;
   margin: 0;
-
+  margin-left: 30px;
   padding-left: 10px;
   padding-right: 10px;
 
-  color: #fafafa;
+  color: black;
 
-  float: left;
+  /*float: left;*/
 
   font-size: 25px;
 
@@ -40,7 +55,8 @@
 
 #btnOk
 {
-
+  position: absolute;
+  top: 85%;
   border: 0;
   padding: 0;
 
@@ -56,9 +72,9 @@
   width: 100px;
   height: 50px;
 
-  margin-left: 25px;
+  /*margin-left: px;*/
 
-  float: left;
+  /*float: left;*/
 
   border-radius: 15px;
   border-bottom: 5px solid dimgray;
@@ -75,7 +91,7 @@
 {
 
   border-bottom: 0px solid #285676;
-  border-top: 5px solid #AD4341;
+  border-top: 5px solid dimgrey;
 
 }
 
@@ -176,7 +192,7 @@
     position: relative;
     width: 400px;
     height: 260px;
-    top: 40px;
+    top: 50px;
     text-align: center;
     display: block;
     margin: auto;
@@ -184,7 +200,7 @@
 
 #plate {
     /*z-index: 300;*/
-    background:  rgba(0, 0, 0, 0.5);
+    background:  rgba(250, 250, 250, 0.6);
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     -o-transform: rotateY(-180deg);
@@ -494,9 +510,9 @@
     transition: all 0.3s ease-in-out;
     border: 2px solid hsl(194, 100%, 72%);
     margin: 15px 0;
-    padding: 10px;
-    font-size: 20px;
-    background-color: hsl(0, 0%, 94%);
+    /*padding: 10px;*/
+    /*font-size: 20px;*/
+    /*background-color: hsl(0, 0%, 94%);*/
 }
 
 .send:active {
